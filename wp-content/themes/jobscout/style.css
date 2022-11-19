@@ -1106,6 +1106,7 @@ body.custom-background .site {
 .container {
   margin: 0 auto;
   max-width: 1170px;
+  padding: 0;
 }
 
 .fallback-svg {
@@ -8164,28 +8165,31 @@ RESPONSIVE STYLESHEET
 .site-branding.logo-text .site-logo {
   width: 190px;
 }
-.btn-dn{
-width: 148px;
+
+.btn-dn {
+  width: 148px;
 }
 
-.btn-dn a{
-color: #333;
-font-weight: 400
+.btn-dn a {
+  color: #333;
+  font-weight: 400
 }
 
-.btn-wrap{
-margin-right: -38px;
+.btn-wrap {
+  margin-right: -38px;
 }
-.btn-dn a:hover{
-color: #2ace5e;
+
+.btn-dn a:hover {
+  color: #2ace5e;
 }
-.btn-dn .icon-login{
-margin-right: 5px;
+
+.btn-dn .icon-login {
+  margin-right: 5px;
 }
 
 .header-main .menu-wrap {
   text-align: left !important;
-margin-right: 40px;
+  margin-right: 40px;
 }
 
 .site-branding.logo-text {
@@ -8209,7 +8213,7 @@ a.btn {
   font-size: 1em;
   text-transform: uppercase;
   border-radius: none;
-  padding:0;
+  padding: 0;
 }
 
 .main-navigation ul li ul {
@@ -8223,12 +8227,13 @@ a.btn {
   z-index: 999;
   margin-left: -9999px;
   box-shadow: 0 10px 10px rgb(0 0 0 / 10%);
-    background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 0.25rem;
 }
-.menu-item-has-children a:after{
-display: inline-block;
+
+.menu-item-has-children a:after {
+  display: inline-block;
   width: 0;
   height: 0;
   margin-left: 5px;
@@ -8239,6 +8244,85 @@ display: inline-block;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
 }
+
 .header-main {
   padding: 5px 0;
+}
+
+/* Blog */
+.article-section .article-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  grid-row-gap: 50px;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+
+section.article-section {
+  padding: 50px 0;
+  margin: 0;
+  background-color: #f7f3f3;
+  text-align: center;
+}
+
+.blog-container {
+  margin: 0 auto;
+}
+
+.content>a {
+  color: #11b043;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.entry-title>a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content>p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.page-template-default figure.post-thumbnail {
+  margin: 20px 0 0px 20px;
+  height: calc(100% - 40px);
+}
+
+.article-section .article-wrap article img {
+  width: 100%;
+  height: 100%;
+}
+
+.col-md-5 {
+  padding-right: 0 !important;
+}
+
+.col-md-7 {
+  padding-left: 0 !important;
+}
+
+.article-section .article-wrap article {
+  background-color: #fff;
+}
+
+section[class*="-section"] .widget_text .widget-title,
+.section-title,
+.client-section .widget .widget-title {
+  font-size: 1.7223em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 700;
+  line-height: 1.5;
 }

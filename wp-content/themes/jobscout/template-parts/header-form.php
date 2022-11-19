@@ -32,6 +32,11 @@ if( $post_slug ){
       <div class="search_location">
         <label for="search_location"><?php esc_html_e( 'Location', 'jobscout' ); ?></label>
         <input type="text"  id="search_location" name="search_location" placeholder="<?php esc_attr_e( 'Location', 'jobscout' ); ?>">
+        <div class="location_menu">
+          <ul>
+            <li></li>
+          </ul>
+        </div>
       </div>
       
       <?php if( $ed_job_category ){ ?>
