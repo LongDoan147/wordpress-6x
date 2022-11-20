@@ -221,7 +221,7 @@ function jobscout_post_thumbnail() {
     if( is_home() || is_archive() || is_search() ){        
         $image_size = 'jobscout-blog';    
         if( has_post_thumbnail() ){                        
-            echo '<figure class="post-thumbnail"><a href="' . esc_url( get_permalink() ) . '">';
+            echo '<figure class="post-thumbnail"><a href="' . esc_url( get_permalink() ) . '">'; //đây
                 the_post_thumbnail( $image_size, array( 'itemprop' => 'image' ) );    
             echo '</a></figure>';
         }else{
@@ -262,14 +262,15 @@ function jobscout_entry_header(){ ?>
 
             if( is_single() ){
                 if( ! $ed_cat_single ) jobscout_category();
-            }else{
-                if( 'post' === get_post_type() ){
-                    echo '<div class="entry-meta">';
-                    if( ! $hide_author ) jobscout_posted_by();
-                    if( ! $hide_date ) jobscout_posted_on();
-                    echo '</div>';
-                }
             }
+            // else{
+            //     if( 'post' === get_post_type() ){
+            //         echo '<div class="entry-meta">';
+            //         if( ! $hide_author ) jobscout_posted_by();
+            //         if( ! $hide_date ) jobscout_posted_on();
+            //         echo '</div>';
+            //     }
+            // }
 
             if ( is_singular() ) :
                 the_title( '<h1 class="entry-title">', '</h1>' );
@@ -327,7 +328,7 @@ function jobscout_entry_footer(){
 			}
             
             if( is_front_page() || is_home() || is_search() || is_archive() ){
-                echo '<a href="' . esc_url( get_the_permalink() ) . '" class="readmore-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.207 8.58"><defs><style>.c{fill:none;stroke:#2ace5e;}</style></defs><g transform="translate(-701.5 -958.173)"><path class="c" d="M-9326.909-9204.917l-3.937,3.937,3.937,3.937" transform="translate(-8613.846 -8238.518) rotate(180)"/><line class="c" x2="15.154" transform="translate(701.5 962.426)"/></g></svg>' . esc_html( $readmore ) . '</a>';    
+                echo '<a href="' . esc_url( get_the_permalink() ) . '" class="readmore-link">' . esc_html( $readmore ) . '</a>';    
             }
 
             if( is_single() ) echo '<div class="entry-footer-right">';
@@ -336,25 +337,25 @@ function jobscout_entry_footer(){
                 jobscout_comment_count();
             }
             
-            if( get_edit_post_link() ){
-                edit_post_link(
-                    sprintf(
-                        wp_kses(
-                            /* translators: %s: Name of current post. Only visible to screen readers */
-                            __( 'Edit <span class="screen-reader-text">%s</span>', 'jobscout' ),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
-                        ),
-                        get_the_title()
-                    ),
-                    '<span class="edit-link">',
-                    '</span>'
-                );
-            }
-            if( is_single() ) echo '</div>';
+            // if( get_edit_post_link() ){
+            //     edit_post_link(
+            //         sprintf(
+            //             wp_kses(
+            //                 /* translators: %s: Name of current post. Only visible to screen readers */
+            //                 __( 'Edit <span class="screen-reader-text">%s</span>', 'jobscout' ),
+            //                 array(
+            //                     'span' => array(
+            //                         'class' => array(),
+            //                     ),
+            //                 )
+            //             ),
+            //             get_the_title()
+            //         ),
+            //         '<span class="edit-link">',
+            //         '</span>'
+            //     );
+            // }
+            // if( is_single() ) echo '</div>';
 		?>
 	</footer><!-- .entry-footer -->
 	<?php 
