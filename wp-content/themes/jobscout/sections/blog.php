@@ -39,21 +39,8 @@ if ($ed_blog && ($blog_heading || $sub_title || $qry->have_posts())) { ?>
             <?php if ($qry->have_posts()) { ?>
 
                 <div class="article-wrap">
-                    <?php
-                    
-                    // lấy bài viết.
-                    $_post = get_post();
-                    // lấy tiêu đề bài viết.
-					$_new_string_title = $_post->post_title;
-                    // lấy nội dung chính bài viết.
-                    $_new_string_content = substr(
-                        $qry->the_content,
-                        strpos($qry->the_content, "<!-- wp:paragraph -->"),
-                        strpos($qry->the_content, "<!-- /wp:paragraph -->")
-                    );
-                    // $_new_string_guid = $_post->guid;
-                    // $_new_string_guid = $get_permalink;
-                    while ($qry->have_posts()) {
+                    <?php         
+                  while ($qry->have_posts()) {
                         $qry->the_post(); ?>
                         <article class="post">
                             <div class="row">

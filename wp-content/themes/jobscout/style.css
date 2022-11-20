@@ -8326,6 +8326,11 @@ section[class*="-section"] .widget_text .widget-title,
   font-weight: 700;
   line-height: 1.5;
 }
+.article-section .article-wrap article {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+  border-radius: 0px !important;
+  overflow: hidden !important;
+}
 
 /* Blog Page */
 .container {
