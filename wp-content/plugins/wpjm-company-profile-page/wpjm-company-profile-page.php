@@ -221,19 +221,19 @@ function gma_wpjmcpp_display_job_meta_data() {
   // ##
 
   
-      $single_company_slug = $the_new_company_taxonomy[0]->slug;
-      $url = home_url() . '/company/' . $single_company_slug; // OK, page is created.
+//       $single_company_slug = $the_new_company_taxonomy[0]->slug;
+//       $url = home_url() . '/company/' . $single_company_slug; // OK, page is created.
 
 
 
-  // Checks if the company name has been added as a tag to the individual job listing
-  if (!empty($data)) {
-  	$company_name = "<li><a href='" . esc_url( $url ) . "'>" . esc_html( $data ) . " profile</a></li>";	
-  } else {
-  	$company_name = "<li><a href='" . esc_url( $url ) . "'>Company profile</a></li>";	
-  }
+//   // Checks if the company name has been added as a tag to the individual job listing
+//   if (!empty($data)) {
+//   	$company_name = "<li><a href='" . esc_url( $url ) . "'>" . esc_html( $data ) . " profile</a></li>";	
+//   } else {
+//   	$company_name = "<li><a href='" . esc_url( $url ) . "'>Company profile</a></li>";	
+//   }
 
-  echo $company_name;
+//   echo $company_name;
 
 }
 

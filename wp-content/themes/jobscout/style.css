@@ -2619,7 +2619,7 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article .company-name::before {
-  content: "@";
+  content: "Creted: ";
 }
 
 .top-job-section .row div.job_listings article .entry-meta {
@@ -8338,14 +8338,14 @@ section[class*="-section"] .widget_text .widget-title,
   max-width: 1200px;
   padding: 0;
 }
-.site-main{
+/* .site-main{
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-gap: 30px;
 text-align: left;
 margin-top: 50px;
 margin-bottom: 40px;
-}
+} */
 .site-main article .entry-content p {    margin-top: 0;
 display: -webkit-box;
 -webkit-line-clamp: 3;
@@ -8369,7 +8369,7 @@ padding: 50px 0;
   background-color: #f7f3f3;
 }
 .list-view .site-main article {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 background-color: #fff;
 border-radius: 0;
 }
