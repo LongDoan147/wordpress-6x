@@ -132,27 +132,6 @@ function jobscout_site_branding( $responsive = false ){
                 the_custom_logo();
                 echo '</div>';
             } 
-
-            echo '<div class="site-title-wrap">';
-            if( $responsive ){ ?>
-                <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
-            <?php }else{
-                if( is_front_page() ){ ?>
-                    <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-                    <?php 
-                }else{ ?>
-                    <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
-                <?php
-                }
-            }
-
-            $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ){ ?>
-                <p class="site-description" itemprop="description"><?php echo $description; ?></p>
-            <?php
-
-            }
-            echo '</div><!-- .site-title-wrap -->'
         ?>
     </div>
     <?php
@@ -166,6 +145,7 @@ if( ! function_exists( 'jobscout_primary_nagivation' ) ) :
 function jobscout_primary_nagivation(){ 
 
     $post_job_label  = get_theme_mod( 'post_job_label', __( 'Post Jobs', 'jobscout' ) );
+    $login  = get_theme_mod( 'login', __( 'Đăng Nhập', 'jobscout' ) );
     $post_job_url    = get_theme_mod( 'post_job_url', '#' );
     ?>
     	<nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -185,8 +165,11 @@ function jobscout_primary_nagivation(){
     		?>
     	</nav><!-- #site-navigation -->
         <?php if( $post_job_label || $post_job_url ){ ?>
+            <div class="btn-dn">
+                <a href="<?php echo esc_url( $post_job_url ) ?>"><i class="icon-login fa fa-sign-in" aria-hidden="true"></i><?php echo esc_html( $login ) ?></a>
+            </div>
             <div class="btn-wrap">
-                <a class="btn" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
+                <a class="btn" href="<?php echo esc_url( $post_job_url ) ?>"> <i class="fa fa-briefcase"></i> <?php echo esc_html( $post_job_label ) ?></a>
             </div>
         <?php } 
   
@@ -212,22 +195,7 @@ if( ! function_exists( 'jobscout_secondary_navigation' ) ) :
  * Secondary Navigation
 */
 function jobscout_secondary_navigation(){ ?>
-    <div class="header-t">
-        <div class="container">
-            <div class="left-block">
-	            <nav class="secondary-nav">
-            		<?php
-            			wp_nav_menu( array(
-            				'theme_location' => 'secondary',
-                            'menu_class'     => 'nav-menu',
-            				'menu_id'        => 'secondary-menu',
-                            'fallback_cb'    => 'jobscout_secondary_menu_fallback',
-            			) );
-            		?>
-	            </nav>
-            </div>
-        </div>
-    </div><!-- .header-t -->
+   
     <?php
 }
 endif;
